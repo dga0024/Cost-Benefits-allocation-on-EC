@@ -4,7 +4,8 @@
 rm(list = ls())
 cat("\014")
 
-setwd(choose.dir())
+getwd()
+setwd(choose.dir(getwd(),"Seleccione ubicacion del archivo a ejecutar:"))
 
 dir = as.character(getwd())
 texto1 = paste0(dir,"/")
@@ -170,7 +171,7 @@ print(GraficoPLOT_FILA0_FINAL)
 
 nombregraf = paste0("0. Perfiles consumo generacion ",rightnow,".jpeg")
 print(nombregraf)
-ggsave(plot = GraficoPLOT_FILA0_FINAL,   #nombre de la gráfica en R
+ggsave(plot = GraficoPLOT_FILA0_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
        path = paste0(getwd(),"/Graficos"),
        device = "jpeg",
@@ -190,7 +191,7 @@ print(GraficoPLOT_FILA1_FINAL)
 
 nombregraf = paste0("1. Escenarios de costes v1 ",rightnow,".jpeg")
 print(nombregraf)
-ggsave(plot = GraficoPLOT_FILA1_FINAL,   #nombre de la gráfica en R
+ggsave(plot = GraficoPLOT_FILA1_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
        path = paste0(getwd(),"/Graficos"),
        device = "jpeg",
@@ -211,7 +212,7 @@ print(GraficoPLOT_FILA2_FINAL)
 
 nombregraf = paste0("2. Escenarios de ratio ahorro v2 ",rightnow,".jpeg")
 print(nombregraf)
-ggsave(plot = GraficoPLOT_FILA2_FINAL,   #nombre de la gráfica en R
+ggsave(plot = GraficoPLOT_FILA2_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
        path = paste0(getwd(),"/Graficos"),
        device = "jpeg",
@@ -236,7 +237,7 @@ print(GraficoPLOT_FILA3_FINAL)
 
 nombregraf = paste0("3. Escenarios de surplus 2 escenarios ",rightnow,".jpeg")
 print(nombregraf)
-ggsave(plot = GraficoPLOT_FILA3_FINAL,   #nombre de la gráfica en R
+ggsave(plot = GraficoPLOT_FILA3_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
        path = paste0(getwd(),"/Graficos"),
        device = "jpeg",
@@ -253,9 +254,9 @@ GraficoPLOT_FILA4_FINAL = GraficoPLOT_FILA4("Corr90", SimData,Num_perfiles_gen,N
                           GraficoPLOT_FILA4("Corr50", SimData,Num_perfiles_gen,N)
 print(GraficoPLOT_FILA4_FINAL)
 
-nombregraf = paste0("4. Escenarios de energía ",rightnow,".jpeg")
+nombregraf = paste0("4. Escenarios de energia ",rightnow,".jpeg")
 print(nombregraf)
-ggsave(plot = GraficoPLOT_FILA4_FINAL,   #nombre de la gráfica en R
+ggsave(plot = GraficoPLOT_FILA4_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
        path = paste0(getwd(),"/Graficos"),
        device = "jpeg",
