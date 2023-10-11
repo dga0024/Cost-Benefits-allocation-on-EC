@@ -1,6 +1,26 @@
+# Lista de paquetes que deseas comprobar e instalar
+paquetes_a_instalar <- c("readr", "readxl", "dplyr","tictoc","lubridate",
+                         "ggplot2","scales","gridExtra","purrrlyr","patchwork","magick")
+
+
+# Función para verificar e instalar los paquetes
+instalar_paquetes <- function(paquetes) {
+  for (paquete in paquetes) {
+    if (!requireNamespace(paquete, quietly = TRUE)) {
+      install.packages(paquete, dependencies = TRUE)
+      library(paquete, character.only = TRUE)
+      cat(paste("Paquete", paquete, "instalado.\n"))
+    } else {
+      cat(paste("Paquete", paquete, "ya está instalado.\n"))
+    }
+  }
+}
 
 
 Inicializar <- function() {
+  
+  # Llama a la función para instalar los paquetes
+  instalar_paquetes(paquetes_a_instalar)
   
   # Cargar paquetes
   library("readr")  #Para CSV

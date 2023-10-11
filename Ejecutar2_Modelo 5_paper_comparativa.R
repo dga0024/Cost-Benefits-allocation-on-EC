@@ -92,11 +92,11 @@ GraficoPLOT_FILA2 <- function() {
     ggplot() +
     # ggtitle(paste0("Simulation of allocation systems - N=",N)) +
     theme (plot.title = element_text(family="Arial",
-                                     size=rel(1.5), #Tamaño relativo de la letra del título
-                                     vjust=2, hjust = 0, #Justificación vertical, para separarlo del gráfico
+                                     size=rel(1.5), #Tama?o relativo de la letra del t?tulo
+                                     vjust=2, hjust = 0, #Justificaci?n vertical, para separarlo del gr?fico
                                      face="bold", #Letra negrilla. Otras posibilidades "plain", "italic", "bold" y "bold.italic"
                                      color="black", #Color del texto
-                                     lineheight=1.5)) + #Separación entre líneas
+                                     lineheight=1.5)) + #Separaci?n entre l?neas
     theme_bw() +
     geom_point(data = Resumen_costes_cont[1:lim1,],
               aes(x=seq(1,N/2,1), y=as.numeric(Cost_NoTrade), colour = "No_Trade"),
@@ -128,7 +128,7 @@ GraficoPLOT_FILA2 <- function() {
     
     theme(axis.text.x=element_text(angle=0, hjust=1, colour = "black", size=rel(1))) +
     theme(axis.text.y=element_text(hjust=1, colour = "black", size=rel(1.5)))+
-    labs(x = "Participant's ID", y = "Cost (???)",color = "") +
+    labs(x = "Participant's ID", y = "Cost (Euro)",color = "") +
     theme(axis.text.x=element_text(angle=45, hjust=1, colour = "black", size=rel(1.5))) +
     theme(axis.text.y=element_text(hjust=1, colour = "black", size=rel(1.5)))+
     scale_x_continuous(breaks = waiver(), n.breaks = n_breaks,
@@ -159,7 +159,7 @@ rightnow = as.character(Sys.time(),format="%d-%m-%Y %H%M%S")
 nombregraf = paste0("5. Simulaciones de sistemas reparto ",rightnow,".jpeg")
 print(nombregraf)
 
-ggsave(plot = GraficoPLOT,   #nombre de la gráfica en R
+ggsave(plot = GraficoPLOT,   #nombre de la gr?fica en R
        filename=nombregraf,
        path = paste0(getwd(),"/Graficos"),
        device = "jpeg",
