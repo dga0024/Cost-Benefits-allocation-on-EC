@@ -1,11 +1,21 @@
 
 #------   INICIALIZAR  -------------------------------------------------------------------------------------------------------------------------
+if(!require('utils')) {
+  install.packages('utils')
+  library('utils')
+}
+
 
 rm(list = ls())
 cat("\014")
 
 getwd()
-setwd(choose.dir(getwd(),"Seleccione ubicacion del archivo a ejecutar:"))
+
+if (interactive() && .Platform$OS.type == "windows") {
+  choose.dir(getwd(), "Choose a suitable folder")
+} else {
+  file.choose()
+}
 
 dir = as.character(getwd())
 texto1 = paste0(dir,"/")
