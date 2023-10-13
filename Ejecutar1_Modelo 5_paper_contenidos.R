@@ -11,20 +11,22 @@ cat("\014")
 
 getwd()
 
+#Establecer directorio de trabajo
 if (interactive() && .Platform$OS.type == "windows") {
-  choose.dir(getwd(), "Choose a suitable folder")
+  dir = choose.dir(getwd(), "Choose a suitable folder")
 } else {
-  file.choose()
+  dir = file.choose()
 }
 
-dir = as.character(getwd())
+
+setwd(dir)
 texto1 = paste0(dir,"/")
 texto1 = as.character(chartr("/","\\",texto1))
 
 source(paste0(texto1,"Modelo 0 Inicializar.R"))
 
 DATOS_INICIO = (Inicializar())
-rightnow = as.character(Sys.time(),format="%d-%m-%Y %H%M%S")
+rightnow = as.character(format(Sys.time(), "%Y-%m-%d %H-%M-%S"))
 
 N = 100
 Consumos_base = (DATOS_INICIO[,c(3,5,6)])
@@ -167,10 +169,10 @@ ruta_carpeta <- paste0(getwd(),"/Graficos")
 
 # Verificar si la carpeta fue creada exitosamente
 if (file.exists(ruta_carpeta)) {
-  print("Ya existe la carpeta")
+  print("Folder alreagy exists")
 } else {
   dir.create(ruta_carpeta)
-  print("Carpeta creada")
+  print("Folder created")
 }
 
 
@@ -179,7 +181,7 @@ GraficoPLOT_FILA0_FINAL = GraficoPLOT_PERFILES()
 print(GraficoPLOT_FILA0_FINAL)
 
 
-nombregraf = paste0("0. Perfiles consumo generacion ",rightnow,".jpeg")
+nombregraf = paste0("Fig8. Energy consumption profiles",rightnow,".jpeg")
 print(nombregraf)
 ggsave(plot = GraficoPLOT_FILA0_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
@@ -199,7 +201,7 @@ GraficoPLOT_FILA1_FINAL = GraficoPLOT_FILA1("Corr90", SimData,Num_perfiles_gen,N
 
 print(GraficoPLOT_FILA1_FINAL)
 
-nombregraf = paste0("1. Escenarios de costes v1 ",rightnow,".jpeg")
+nombregraf = paste0("A. Energy costs scenarios ",rightnow,".jpeg")
 print(nombregraf)
 ggsave(plot = GraficoPLOT_FILA1_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
@@ -220,7 +222,7 @@ GraficoPLOT_FILA2_FINAL = GraficoPLOT_FILA2("Corr90", SimData,Num_perfiles_gen,N
                           GraficoPLOT_FILA2("Corr50", SimData,Num_perfiles_gen,N)
 print(GraficoPLOT_FILA2_FINAL)
 
-nombregraf = paste0("2. Escenarios de ratio ahorro v2 ",rightnow,".jpeg")
+nombregraf = paste0("Fig9. Savings % scenarios ",rightnow,".jpeg")
 print(nombregraf)
 ggsave(plot = GraficoPLOT_FILA2_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
@@ -245,7 +247,7 @@ GraficoPLOT_FILA3_FINAL = GraficoPLOT_FILA3("Corr90", SimData,Num_perfiles_gen,N
 
 print(GraficoPLOT_FILA3_FINAL)
 
-nombregraf = paste0("3. Escenarios de surplus 2 escenarios ",rightnow,".jpeg")
+nombregraf = paste0("Fig10. Susplus scenarios ",rightnow,".jpeg")
 print(nombregraf)
 ggsave(plot = GraficoPLOT_FILA3_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
@@ -264,7 +266,7 @@ GraficoPLOT_FILA4_FINAL = GraficoPLOT_FILA4("Corr90", SimData,Num_perfiles_gen,N
                           GraficoPLOT_FILA4("Corr50", SimData,Num_perfiles_gen,N)
 print(GraficoPLOT_FILA4_FINAL)
 
-nombregraf = paste0("4. Escenarios de energia ",rightnow,".jpeg")
+nombregraf = paste0("B. Energy self-consumtion scenarios ",rightnow,".jpeg")
 print(nombregraf)
 ggsave(plot = GraficoPLOT_FILA4_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,

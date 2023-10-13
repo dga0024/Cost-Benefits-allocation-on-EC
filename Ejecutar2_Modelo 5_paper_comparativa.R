@@ -5,9 +5,18 @@ rm(list = ls())
 cat("\014") 
 
 #Establecer directorio de trabajo
-setwd(choose.dir())
 
-dir = as.character(getwd())
+getwd()
+
+#Establecer directorio de trabajo
+if (interactive() && .Platform$OS.type == "windows") {
+  dir = choose.dir(getwd(), "Choose a suitable folder")
+} else {
+  dir = file.choose()
+}
+
+
+setwd(dir)
 texto1 = paste0(dir,"/")
 texto1 = as.character(chartr("/","\\",texto1))
 
@@ -152,11 +161,23 @@ GraficoPLOT_FILA2 <- function() {
   
 }
 
+# Ruta y nombre de la carpeta a crear
+ruta_carpeta <- paste0(getwd(),"/Graficos")
+
+# Verificar si la carpeta fue creada exitosamente
+if (file.exists(ruta_carpeta)) {
+  print("Folder alreagy exists")
+} else {
+  dir.create(ruta_carpeta)
+  print("Folder created")
+}
+
+
 GraficoPLOT = GraficoPLOT_FILA2()
 print(GraficoPLOT)
 
-rightnow = as.character(Sys.time(),format="%d-%m-%Y %H%M%S")
-nombregraf = paste0("5. Simulaciones de sistemas reparto ",rightnow,".jpeg")
+rightnow = as.character(format(Sys.time(), "%Y-%m-%d %H-%M-%S"))
+nombregraf = paste0("Fig11. Allocation systems simulation ",rightnow,".jpeg")
 print(nombregraf)
 
 ggsave(plot = GraficoPLOT,   #nombre de la gr?fica en R
