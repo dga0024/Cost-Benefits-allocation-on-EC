@@ -1,10 +1,14 @@
 
 #------   INICIALIZAR  -------------------------------------------------------------------------------------------------------------------------
+if(!require('utils','tcltk')) {
+  install.packages('utils','tcltk')
+}
+
+library('utils')
+library('tcltk')
 
 rm(list = ls())
-cat("\014") 
-
-#Establecer directorio de trabajo
+cat("\014")
 
 getwd()
 
@@ -12,15 +16,15 @@ getwd()
 if (interactive() && .Platform$OS.type == "windows") {
   dir = choose.dir(getwd(), "Choose a suitable folder")
 } else {
-  dir = file.choose()
+  # dir = file.choose()
+  dir = tk_choose.dir()
 }
-
 
 setwd(dir)
 texto1 = paste0(dir,"/")
 texto1 = as.character(chartr("/","\\",texto1))
 
-source(paste0(texto1,"Modelo 0 Inicializar.R"))
+source(paste0(texto1,"Modelo_0_Inicializar.R"))
 
 DATOS_INICIO = (Inicializar())
 

@@ -1,10 +1,11 @@
 
 #------   INICIALIZAR  -------------------------------------------------------------------------------------------------------------------------
-if(!require('utils')) {
-  install.packages('utils')
-  library('utils')
+if(!require('utils','tcltk')) {
+  install.packages('utils','tcltk')
 }
 
+library('utils')
+library('tcltk')
 
 rm(list = ls())
 cat("\014")
@@ -15,7 +16,8 @@ getwd()
 if (interactive() && .Platform$OS.type == "windows") {
   dir = choose.dir(getwd(), "Choose a suitable folder")
 } else {
-  dir = file.choose()
+  # dir = file.choose()
+  dir = tk_choose.dir()
 }
 
 
@@ -23,7 +25,7 @@ setwd(dir)
 texto1 = paste0(dir,"/")
 texto1 = as.character(chartr("/","\\",texto1))
 
-source(paste0(texto1,"Modelo 0 Inicializar.R"))
+source(paste0(texto1,"Modelo_0_Inicializar.R"))
 
 DATOS_INICIO = (Inicializar())
 rightnow = as.character(format(Sys.time(), "%Y-%m-%d %H-%M-%S"))
@@ -162,7 +164,7 @@ save(Resumen_TEST2,file=nombrefile)
 
 #------ GRAFICAS COMPARATIVAS DEL PAPER  -------------------------------------------------------------------------------------------------------------------------
 
-source(paste0(texto1,"Modelo 2-graphs.R"))
+source(paste0(texto1,"Modelo_2-graphs.R"))
 
 # Ruta y nombre de la carpeta a crear
 ruta_carpeta <- paste0(getwd(),"/Graficos")
