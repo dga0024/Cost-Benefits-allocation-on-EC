@@ -19,7 +19,7 @@ The "Ejecutar2_Modelo 5_paper_comparativa" script generates the illustration:
 
 
 ## How to proceed
-Run the script depending on what figures do you want to generate, in both cases, the following steps will be automacitally followed if you execute the whole script:
+Run the script depending on what figures do you want to generate, in both cases, the following steps will be automatically followed if you execute the whole script:
 
 1. In the very beginning, the code will ask for the folder where this repositotory has been downloaded, you have to select it, tipycally it will be named "C:\... ...\GitHub\Cost-Benefits-allocation-on-EC".
 2. After that, the code will run by itself, but some interacion will appear at the console, to be taken into account:
