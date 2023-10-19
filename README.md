@@ -2,9 +2,8 @@
 
 ## Introduction
 Welcome to the Cost-Benefits allocation on energy communitires repository.
-This piece of code has been created as support material for the paper titled "A simple and efficient method to allocate costs and benefits in energy communities"
-https://doi.org/10.3926/jiem.5514(https://www.researchgate.net/publication/372482476_A_simple_and_efficient_method_to_allocate_costs_and_benefits_in_energy_communities)
-Gonzalez-Asenjo, D., Izquierdo, L. R., & Sedano, J. (2023). A simple and efficient method to allocate costs and benefits in energy communities. Journal of Industrial Engineering and Management, 16(2), 398–424. 
+This piece of code has been created as support material for the paper:
+Gonzalez-Asenjo, D., Izquierdo, L. R., & Sedano, J. (2023). [A simple and efficient method to allocate costs and benefits in energy communities](https://www.jiem.org/index.php/jiem/article/download/5514/1060). Journal of Industrial Engineering and Management, 16(2), 398–424. DOI: [10.3926/jiem.5514](https://doi.org/10.3926/jiem.5514)
 
 The purpose of these scripts is to reproduce the graphical results presented in the paper, in particular:
 The "Ejecutar1_Modelo 5_paper_contenidos.R" script generates the illustrations:
