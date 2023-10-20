@@ -121,9 +121,9 @@ for (i in 1:ncol(Conjunto_Distrib)) {
 }
 
 path = paste0(getwd(),"/")
-nombrefile = paste0("Resumen_TEST2_pbuy_",p_grid_buy[1],"_psell_",p_grid_sell[1],"_N-",N,"_P-",PERFILGEN," ",rightnow,".RData")
-print(nombrefile)
-save(Resumen_TEST2,file=nombrefile)
+nombrefile1 = paste0("Resumen_TEST2_pbuy_",p_grid_buy[1],"_psell_",p_grid_sell[1],"_N-",N,"_P-",PERFILGEN,".RData")
+print(nombrefile1)
+save(Resumen_TEST2,file=nombrefile1)
 
 
 # Caso 2 "Resumen_TEST2_pbuy_0.3_psell_0.1_N-100_P-51.RData" ---------------------------------------------
@@ -172,9 +172,9 @@ for (i in 1:ncol(Conjunto_Distrib)) {
 }
 
 path = paste0(getwd(),"/")
-nombrefile = paste0("Resumen_TEST2_pbuy_",p_grid_buy[1],"_psell_",p_grid_sell[1],"_N-",N,"_P-",PERFILGEN," ",rightnow,".RData")
-print(nombrefile)
-save(Resumen_TEST2,file=nombrefile)
+nombrefile2 = paste0("Resumen_TEST2_pbuy_",p_grid_buy[1],"_psell_",p_grid_sell[1],"_N-",N,"_P-",PERFILGEN,".RData")
+print(nombrefile2)
+save(Resumen_TEST2,file=nombrefile2)
 
 
 #------ GRAFICAS COMPARATIVAS DEL PAPER  -------------------------------------------------------------------------------------------------------------------------
@@ -198,7 +198,7 @@ GraficoPLOT_FILA0_FINAL = GraficoPLOT_PERFILES()
 print(GraficoPLOT_FILA0_FINAL)
 
 
-nombregraf = paste0("Fig8. Energy consumption profiles",rightnow,".jpeg")
+nombregraf = paste0("Fig8. Energy consumption profiles ",rightnow,".jpeg")
 print(nombregraf)
 ggsave(plot = GraficoPLOT_FILA0_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
@@ -209,7 +209,7 @@ ggsave(plot = GraficoPLOT_FILA0_FINAL,   #nombre de la gr?fica en R
 
 # 1. GRAFICO COMPARATIVO DE ESCENARIOS DE COSTES -----------------------------------------------------------------------------------------------------
 path = paste0(getwd(),"/")
-(load(paste0(path,"Resumen_TEST2_pbuy_0.3_psell_0.1_N-100_P-51 05-07-2023 231114.RData")))
+load(paste0(path,nombrefile1))
 SimData = Resumen_TEST2
 
 GraficoPLOT_FILA1_FINAL = GraficoPLOT_FILA1("Corr90", SimData,Num_perfiles_gen,N) + 
@@ -231,7 +231,7 @@ ggsave(plot = GraficoPLOT_FILA1_FINAL,   #nombre de la gr?fica en R
 
 # 2. GRAFICO COMPARATIVO DE AHORROS -----------------------------------------------------------------------------------------------------
 path = paste0(getwd(),"/")
-(load(paste0(path,"Resumen_TEST2_pbuy_1_psell_0.1_N-100_P-51 05-07-2023 230125.RData")))
+load(paste0(path,nombrefile1))
 SimData = Resumen_TEST2
 
 GraficoPLOT_FILA2_FINAL = GraficoPLOT_FILA2("Corr90", SimData,Num_perfiles_gen,N) + 
@@ -239,7 +239,7 @@ GraficoPLOT_FILA2_FINAL = GraficoPLOT_FILA2("Corr90", SimData,Num_perfiles_gen,N
                           GraficoPLOT_FILA2("Corr50", SimData,Num_perfiles_gen,N)
 print(GraficoPLOT_FILA2_FINAL)
 
-nombregraf = paste0("Fig9. Savings % scenarios ",rightnow,".jpeg")
+nombregraf = paste0("Fig9. Saving percentage scenarios ",rightnow,".jpeg")
 print(nombregraf)
 ggsave(plot = GraficoPLOT_FILA2_FINAL,   #nombre de la gr?fica en R
        filename=nombregraf,
@@ -251,10 +251,10 @@ ggsave(plot = GraficoPLOT_FILA2_FINAL,   #nombre de la gr?fica en R
 # 3. GRAFICO COMPARATIVO DE EXCEDENTE -----------------------------------------------------------------------------------------------------
 path = paste0(getwd(),"/")
 
-(load(paste0(path,"Resumen_TEST2_pbuy_0.3_psell_0.1_N-100_P-51 05-07-2023 231114.RData")))
+(load(paste0(path,nombrefile1)))
 RESUMEN_pbuy_0.3 = Resumen_TEST2
 
-(load(paste0(path,"Resumen_TEST2_pbuy_1_psell_0.1_N-100_P-51 05-07-2023 230125.RData")))
+(load(paste0(path,nombrefile2)))
 RESUMEN_pbuy_1 = Resumen_TEST2
 
 
@@ -275,7 +275,7 @@ ggsave(plot = GraficoPLOT_FILA3_FINAL,   #nombre de la gr?fica en R
 
 # 4. GRAFICO COMPARATIVO DE ENERGIAS -----------------------------------------------------------------------------------------------------
 path = paste0(getwd(),"/")
-(load(paste0(path,"Resumen_TEST2_pbuy_1_psell_0.1_N-100_P-51 05-07-2023 230125.RData")))
+(load(paste0(path,nombrefile1)))
 SimData = Resumen_TEST2
 
 GraficoPLOT_FILA4_FINAL = GraficoPLOT_FILA4("Corr90", SimData,Num_perfiles_gen,N) + 
