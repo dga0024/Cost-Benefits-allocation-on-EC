@@ -38,7 +38,7 @@ Inicializar <- function() {
   
   library(magick)
 
-  windowsFonts("Arial" = windowsFont("Arial"))
+  # windowsFonts("Arial" = windowsFont("Arial"))
   
   source(paste0(texto1,"Modelo_2-price_based.R"))
   source(paste0(texto1,"Modelo_2-all_as_one.R"))

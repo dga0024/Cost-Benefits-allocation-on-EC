@@ -15,14 +15,30 @@ getwd()
 #Establecer directorio de trabajo
 if (interactive() && .Platform$OS.type == "windows") {
   dir = choose.dir(getwd(), "Choose a suitable folder")
+  setwd(dir)
+  texto1 = paste0(dir,"/")
+  texto1 = as.character(chartr("/","\\",texto1))
 } else {
-  # dir = file.choose()
-  dir = tk_choose.dir()
+  dir = file.choose()
+  # dir = tk_choose.dir()
+  
+  dir3 = as.character(chartr("\\","/",dir))
+  resultado <- strsplit(dir3, "/")
+  AA = unlist(resultado)
+  BB=""
+  for (i in 1:length(AA)-1){
+    if (i==1){
+      BB = paste0(AA[i])
+    }else {
+      BB = paste0(BB,"/",AA[i])
+    }
+  }
+  dir = BB
+  setwd(dir)
+  texto1 = paste0(dir,"/")
+  
 }
 
-setwd(dir)
-texto1 = paste0(dir,"/")
-texto1 = as.character(chartr("/","\\",texto1))
 
 source(paste0(texto1,"Modelo_0_Inicializar.R"))
 
