@@ -24,10 +24,10 @@ Run the script depending on what figures do you want to generate, in both cases,
 1. In the very beginning, the code will ask for the folder where this repositotory has been downloaded, you have to select it, tipycally it will be named "C:\... ...\GitHub\Cost-Benefits-allocation-on-EC".
 2. After that, the code will run by itself, but some interacion will appear at the console, to be taken into account:
    - The code will check if a list of packages are installed, then installing required packages if misees something
-   - In "Ejecutar1_Modelo 5_paper_contenidos.R", while simulations run, it will print the name of the simulation that is running at the moment so that we can check that the system has not freezed
-   - Finally, it will print the name of the figure that is creating at his moment.
+   - In "Ejecutar1_Modelo 5_paper_contenidos.R", while simulations run, it will print the name of the simulation that is running at the moment so that we can check that the system has not frozen
+   - Finally, it will print the name of the figure that is creating at the moment.
   
-## Look fot results
+## Look for results
 After running the piece of code, the results (One .jpg image per each one of the figures above mentioned) will be stored in a folder named "Graficos" in the same directory where the repository is. The code will check if this folfer exists and create it if not present.
 
 
