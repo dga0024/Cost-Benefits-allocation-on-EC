@@ -63,7 +63,7 @@ p_grid_sell = rep(0.10,8760)    #???/kWh
 # p_tr = rep(0.25,8760)           #???/kWh
 p_facility_buy = rep(0,8760)    #???/kWh
 
-Distrib = c(rep(2,round(N*0.5)),rep(3,round(N*0.5)))
+Distrib = (c(rep(2,round(N*0.5)),rep(3,round(N*0.5))))[1:N]
 PERFILGEN = as.numeric(INITIAL_CONDITIONS[3])
 Resultado = Costes_price_based(N, Consumos_base, Distrib, Num_perfiles_gen, PERFILGEN,p_tr_case)
 Resumen_costes_cont = (Resultado$Resumen_costes)
@@ -71,9 +71,9 @@ Resumen_costes_cont[c(4:9,11:16)] = round(as.numeric(unlist(Resumen_costes_cont[
 
 # INICIaLIZAR DISTRUBUCIONES
 # Probamos 3 Distrib de 2 y 3 respectivamente, 90-10%, 74-26%, 50-50%
-Conjunto_Distrib = data.frame(Corr90 = c(rep(2,round(N*0.1)),rep(3,round(N*0.9))),
-                              Corr70 = c(rep(2,round(N*0.3)),rep(3,round(N*0.7))),
-                              Corr50 = c(rep(2,round(N*0.5)),rep(3,round(N*0.5))))
+Conjunto_Distrib = data.frame(Corr90 = (c(rep(2,round(N*0.1)),rep(3,round(N*0.9))))[1:N],
+                              Corr70 = (c(rep(2,round(N*0.3)),rep(3,round(N*0.7))))[1:N],
+                              Corr50 = (c(rep(2,round(N*0.5)),rep(3,round(N*0.5))))[1:N])
 
 Conjunto_PERFILGEN = c(1:Num_perfiles_gen)
 

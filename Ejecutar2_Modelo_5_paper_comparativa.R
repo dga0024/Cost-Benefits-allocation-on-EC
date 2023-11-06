@@ -57,7 +57,7 @@ Consumos_base = (DATOS_INICIO[,c(3,5,6)])
 Distrib = c(rep(1,round(N/3)),
             rep(2,round(N/3)),
             rep(3,N - 2*round(N/3)))
-Distrib = c(rep(2,N/2),rep(3,N/2))
+Distrib = (c(rep(2,round(N*0.5)),rep(3,round(N*0.5))))[1:N]
 Num_perfiles_gen = as.numeric(INITIAL_CONDITIONS[2])
 PERFILGEN = as.numeric(INITIAL_CONDITIONS[3])
 
