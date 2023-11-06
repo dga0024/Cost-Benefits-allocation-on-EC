@@ -24,11 +24,11 @@ GraficoPLOT_PERFILES <- function() {
     ggplot() +
     ggtitle(paste0("Energy profiles")) +
     theme (plot.title = element_text(family="Arial",
-                                     size=rel(1.5), #Tamaño relativo de la letra del título
-                                     vjust=2, hjust = 0, #Justificación vertical, para separarlo del gráfico
+                                     size=rel(1.5), #Tama?o relativo de la letra del t?tulo
+                                     vjust=2, hjust = 0, #Justificaci?n vertical, para separarlo del gr?fico
                                      face="bold", #Letra negrilla. Otras posibilidades "plain", "italic", "bold" y "bold.italic"
                                      color="black", #Color del texto
-                                     lineheight=2)) + #Separación entre líneas
+                                     lineheight=2)) + #Separaci?n entre l?neas
     theme_bw() +
     geom_line(data = Consumos_base[1:24,],
               aes(x=seq(1,24,1), y=`Consumo tipo Gauss`, colour = "Gauss"),
@@ -104,11 +104,11 @@ GraficoPLOT_FILA1 <- function(Corr_case, Resumen_TEST2,Num_perfiles_gen,N) {
     ggplot() +
     ggtitle(paste0("Costs ",Corr_case," - N=",N)) +
     theme (plot.title = element_text(family="Arial",
-                                     size=rel(1.5), #Tamaño relativo de la letra del título
-                                     vjust=2, hjust = 0, #Justificación vertical, para separarlo del gráfico
+                                     size=rel(1.5), #Tama?o relativo de la letra del t?tulo
+                                     vjust=2, hjust = 0, #Justificaci?n vertical, para separarlo del gr?fico
                                      face="bold", #Letra negrilla. Otras posibilidades "plain", "italic", "bold" y "bold.italic"
                                      color="black", #Color del texto
-                                     lineheight=1.5)) + #Separación entre líneas
+                                     lineheight=1.5)) + #Separaci?n entre l?neas
     theme_bw() +
     geom_line(data = Resumen_TEST2[which(Resumen_TEST2$Distrib == Corr_case),],
               aes(x=seq(1,Num_perfiles_gen,1), y=Cost_original, colour = "Cost_original"),
@@ -174,11 +174,11 @@ GraficoPLOT_FILA2 <- function(Corr_case, Resumen_TEST2,Num_perfiles_gen,N) {
     ggplot() +
     ggtitle(paste0("Savings(%) - ",Corr_case1)) +
     theme (plot.title = element_text(family="Arial",
-                                     size=rel(1.5), #Tamaño relativo de la letra del título
-                                     vjust=2, hjust = 0, #Justificación vertical, para separarlo del gráfico
+                                     size=rel(1.5), #Tama?o relativo de la letra del t?tulo
+                                     vjust=2, hjust = 0, #Justificaci?n vertical, para separarlo del gr?fico
                                      face="bold", #Letra negrilla. Otras posibilidades "plain", "italic", "bold" y "bold.italic"
                                      color="black", #Color del texto
-                                     lineheight=1.5)) + #Separación entre líneas
+                                     lineheight=1.5)) + #Separaci?n entre l?neas
     theme_bw() +
     geom_line(data = Resumen_TEST2[which(Resumen_TEST2$Distrib == Corr_case),],
               aes(x=seq(1,Num_perfiles_gen,1), y=Surplus_ratiox100_FV, colour = "PV + No_Trade"),
@@ -249,11 +249,11 @@ GraficoPLOT_FILA3 <- function(Corr_case, Resumen_TEST2,Num_perfiles_gen,N) {
     ggplot() +
     ggtitle(paste0("Surplus_trading - ",Corr_case1)) +
     theme (plot.title = element_text(family="Arial",
-                                     size=rel(0.8), #Tamaño relativo de la letra del título
-                                     vjust=2, hjust = 0, #Justificación vertical, para separarlo del gráfico
+                                     size=rel(0.8), #Tama?o relativo de la letra del t?tulo
+                                     vjust=2, hjust = 0, #Justificaci?n vertical, para separarlo del gr?fico
                                      face="bold", #Letra negrilla. Otras posibilidades "plain", "italic", "bold" y "bold.italic"
                                      color="black", #Color del texto
-                                     lineheight=1.5)) + #Separación entre líneas
+                                     lineheight=1.5)) + #Separaci?n entre l?neas
     theme_bw() +
     geom_line(data = RESUMEN_pbuy_1[which(RESUMEN_pbuy_1$Distrib == Corr_case),],
               aes(x=seq(1,Num_perfiles_gen,1), y=Surplus, colour = "High_Spread"),
@@ -320,11 +320,11 @@ GraficoPLOT_FILA4 <- function(Corr_case, Resumen_TEST2,Num_perfiles_gen,N) {
     ggplot() +
     # ggtitle(paste0("Costs ",Corr_case," - N=",N)) +
     theme (plot.title = element_text(family="Arial",
-                                     size=rel(1.5), #Tamaño relativo de la letra del título
-                                     vjust=2, hjust = 0, #Justificación vertical, para separarlo del gráfico
+                                     size=rel(1.5), #Tama?o relativo de la letra del t?tulo
+                                     vjust=2, hjust = 0, #Justificaci?n vertical, para separarlo del gr?fico
                                      face="bold", #Letra negrilla. Otras posibilidades "plain", "italic", "bold" y "bold.italic"
                                      color="black", #Color del texto
-                                     lineheight=1.5)) + #Separación entre líneas
+                                     lineheight=1.5)) + #Separaci?n entre l?neas
     theme_bw() +
     geom_line(data = Resumen_TEST2[which(Resumen_TEST2$Distrib == Corr_case),],
               aes(x=seq(1,Num_perfiles_gen,1), y=Consumo_en_sol, colour = "Consumo_horas_sol"),

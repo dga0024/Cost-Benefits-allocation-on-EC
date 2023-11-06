@@ -182,7 +182,7 @@ GraficoPLOT_FILA2 <- function() {
 }
 
 # Ruta y nombre de la carpeta a crear
-ruta_carpeta <- paste0(getwd(),"/Graficos")
+ruta_carpeta <- paste0(getwd(),"/Graphs")
 
 # Verificar si la carpeta fue creada exitosamente
 if (file.exists(ruta_carpeta)) {
@@ -202,7 +202,7 @@ print(nombregraf)
 
 ggsave(plot = GraficoPLOT,   #nombre de la gr?fica en R
        filename=nombregraf,
-       path = paste0(getwd(),"/Graficos"),
+       path = paste0(getwd(),"/Graphs"),
        device = "jpeg",
        height = 15, width = 35, dpi = 150, units = "cm")
 
