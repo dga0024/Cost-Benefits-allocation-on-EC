@@ -34,7 +34,7 @@ Besides, a sample of how the graphs should look like is given in the folder "Gra
 ## Play with the code
 In the case that you want to explore a little more about the results of this code, the Excel file called "Initial_conditions" is provided. THere, you can define certain initial conditions for the development of the calculations. Once defined, you could run again the code and see the differences between graphs.
 These initial conditios are:
-- Numnber of agents "N" that form the energy community, given 100 by default
+- Number of agents "N" that form the energy community, given 100 by default
 - Number of simulations in the range of 0%-200% "Demand coverage ratio with PV" parameter, in the code this variable is named "Num_perfiles_gen", and represents the number of simulations that are going to be calculated and then represented in the X axis of the graphs, such as Fig9 or Fig10, among others, given 51 by default
 - The selected simulation within the "Num_perfiles_gen" group to be simulated along the different cost allocation methods. In the code this variable is named "PERFILGEN" and is mainly used to generate Fig11 graph, given 10 by default
 
