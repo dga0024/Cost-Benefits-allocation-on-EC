@@ -49,7 +49,22 @@ Inicializar <- function() {
   getwd()# Carpeta donde estan los datos de partida --> DATOS INICIO
   file0 <- paste0(texto1,"Datos_Base_R.xlsx")
   DATOS_INICIO <- read_excel(file0)
-
+  
   return(DATOS_INICIO)
+  
+}
+
+Inicializar01 <- function() {
+  
+  file01 <- paste0(texto1,"Initial_conditions.xlsx")
+  INITIAL_CONDITIONS <- read_excel(file01)
+  
+  N = INITIAL_CONDITIONS$Value[1]
+  Num_perfiles_gen = INITIAL_CONDITIONS$Value[2]
+  PERFILGEN = INITIAL_CONDITIONS$Value[3]
+  
+  result = list(N,Num_perfiles_gen,PERFILGEN)
+  
+  return(result)
   
 }

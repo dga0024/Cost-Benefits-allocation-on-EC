@@ -43,6 +43,7 @@ if (interactive() && .Platform$OS.type == "windows") {
 source(paste0(texto1,"Modelo_0_Inicializar.R"))
 
 DATOS_INICIO = (Inicializar())
+INITIAL_CONDITIONS = (Inicializar01())
 
 p_grid_buy = rep(0.30,8760)     #???/kWh
 p_grid_sell = rep(0.10,8760)    #???/kWh
@@ -51,14 +52,14 @@ p_facility_buy = rep(0,8760)    #???/kWh
 
 
 #------   TEST 1  -------------------------------------------------------------------------------------------------------------------------
-N = 100
+N = as.numeric(INITIAL_CONDITIONS[1])
 Consumos_base = (DATOS_INICIO[,c(3,5,6)])
 Distrib = c(rep(1,round(N/3)),
             rep(2,round(N/3)),
             rep(3,N - 2*round(N/3)))
 Distrib = c(rep(2,N/2),rep(3,N/2))
-Num_perfiles_gen = 51
-PERFILGEN = 10
+Num_perfiles_gen = as.numeric(INITIAL_CONDITIONS[2])
+PERFILGEN = as.numeric(INITIAL_CONDITIONS[3])
 
 {
 p_tr_case = "continuo"

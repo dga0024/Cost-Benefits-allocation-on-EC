@@ -43,12 +43,13 @@ if (interactive() && .Platform$OS.type == "windows") {
 source(paste0(texto1,"Modelo_0_Inicializar.R"))
 
 DATOS_INICIO = (Inicializar())
+INITIAL_CONDITIONS = (Inicializar01())
 rightnow = as.character(format(Sys.time(), "%Y-%m-%d %H-%M-%S"))
 
-N = 100
+N = as.numeric(INITIAL_CONDITIONS[1])
 Consumos_base = (DATOS_INICIO[,c(3,5,6)])
 Generacion_base = (DATOS_INICIO[,2])
-Num_perfiles_gen = 51
+Num_perfiles_gen = as.numeric(INITIAL_CONDITIONS[2])
 p_tr_case = "continuo"
 lambda = 0.5
 
@@ -63,7 +64,7 @@ p_grid_sell = rep(0.10,8760)    #???/kWh
 p_facility_buy = rep(0,8760)    #???/kWh
 
 Distrib = c(rep(2,round(N*0.5)),rep(3,round(N*0.5)))
-PERFILGEN = 3
+PERFILGEN = as.numeric(INITIAL_CONDITIONS[3])
 Resultado = Costes_price_based(N, Consumos_base, Distrib, Num_perfiles_gen, PERFILGEN,p_tr_case)
 Resumen_costes_cont = (Resultado$Resumen_costes)
 Resumen_costes_cont[c(4:9,11:16)] = round(as.numeric(unlist(Resumen_costes_cont[c(4:9,11:16)])),2)
