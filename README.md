@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/663203965.svg)](https://zenodo.org/doi/10.5281/zenodo.11200196)
+
 # Cost Benefits allocation on EC
 
 ## Introduction
